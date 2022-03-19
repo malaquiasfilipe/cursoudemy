@@ -1,5 +1,6 @@
 package com.cursodespringboot.udemy.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +10,6 @@ import org.springframework.stereotype.Service;
 import com.cursodespringboot.udemy.domain.Categoria;
 import com.cursodespringboot.udemy.repositories.CategoriaRepository;
 import com.cursodespringboot.udemy.services.exceptions.ObjectNoFoundException;
-import com.cursodespringboot.udemy.services.exceptions.DataIntegrityException;
 
 
 @Service
@@ -47,5 +47,11 @@ public class CategoriaService {
 			
 			
 		}
+		
+	}
+	
+	public List<Categoria> findAll(){
+		return repo.findAll();
+		
 	}
 }
