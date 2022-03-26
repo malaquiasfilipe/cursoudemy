@@ -17,9 +17,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cursodespringboot.udemy.domain.Categoria;
+//import com.cursodespringboot.udemy.domain.Categoria;
 import com.cursodespringboot.udemy.domain.Cliente;
-import com.cursodespringboot.udemy.dto.CategoriaDTO;
 import com.cursodespringboot.udemy.dto.ClienteDTO;
 import com.cursodespringboot.udemy.services.ClienteService;
 
