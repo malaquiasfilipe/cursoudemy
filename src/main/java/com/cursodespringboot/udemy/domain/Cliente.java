@@ -9,6 +9,7 @@ import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.CollectionTable;
+import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -29,6 +30,8 @@ public class Cliente implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String nome;
+	
+	@Column(unique= true)
 	private String email;
 	private String  numContribuente;
 	private Integer tipo;
@@ -53,6 +56,8 @@ public class Cliente implements Serializable {
 		super();
 		this.id = id;
 		this.nome = nome;
+		
+		
 		this.email = email;
 		this.numContribuente = numContribuente;
 		this.tipo = (tipo==null) ? null: tipo.getCod();
@@ -139,7 +144,13 @@ public class Cliente implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Cliente other = (Cliente) obj;
-		return Objects.equals(id, other.id);
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		
+		return true;
 	}
 
 	
