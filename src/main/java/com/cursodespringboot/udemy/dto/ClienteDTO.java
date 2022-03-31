@@ -7,7 +7,10 @@ import javax.validation.constraints.Email;
 import org.hibernate.validator.constraints.Length;
 
 import com.cursodespringboot.udemy.domain.Cliente;
+import com.cursodespringboot.udemy.services.validation.ClienteUpdate;
 
+
+@ClienteUpdate
 public class ClienteDTO implements Serializable {
 
 	
